@@ -28,11 +28,6 @@ class ProductQuantityDataImportWriterStep extends PublishAwareStep implements Da
      */
     protected const DEFAULT_INTERVAL = 1;
 
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     *
-     * @return void
-     */
     public function execute(DataSetInterface $dataSet): void
     {
         $dataSet = $this->filterDataSet($dataSet);
@@ -42,11 +37,6 @@ class ProductQuantityDataImportWriterStep extends PublishAwareStep implements Da
         $this->addPublishEvents(ProductQuantityEvents::PRODUCT_QUANTITY_PUBLISH, $spyProductQuantityEntity->getFkProduct());
     }
 
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     *
-     * @return \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface
-     */
     protected function filterDataSet(DataSetInterface $dataSet): DataSetInterface
     {
         if ($dataSet[ProductQuantityDataImportDataSet::COLUMN_QUANTITY_INTERVAL] === '') {
@@ -84,11 +74,6 @@ class ProductQuantityDataImportWriterStep extends PublishAwareStep implements Da
         return $spyProductEntity->getIdProduct();
     }
 
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     *
-     * @return \Orm\Zed\ProductQuantity\Persistence\SpyProductQuantity
-     */
     protected function saveProductQuantity(DataSetInterface $dataSet): SpyProductQuantity
     {
         $idProduct = $this->getIdProductBySku($dataSet[ProductQuantityDataImportDataSet::COLUMN_CONCRETE_SKU]);

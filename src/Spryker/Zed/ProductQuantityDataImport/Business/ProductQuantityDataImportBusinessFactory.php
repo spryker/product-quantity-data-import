@@ -32,9 +32,6 @@ class ProductQuantityDataImportBusinessFactory extends DataImportBusinessFactory
         return $dataImporter;
     }
 
-    /**
-     * @return \Spryker\Zed\ProductQuantityDataImport\Business\Model\ProductQuantityDataImportWriterStep
-     */
     public function createProductQuantityDataImportWriterStep(): ProductQuantityDataImportWriterStep
     {
         return new ProductQuantityDataImportWriterStep();

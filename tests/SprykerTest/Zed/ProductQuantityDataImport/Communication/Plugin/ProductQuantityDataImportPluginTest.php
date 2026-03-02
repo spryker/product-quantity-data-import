@@ -37,9 +37,6 @@ class ProductQuantityDataImportPluginTest extends Unit
      */
     protected static $neededDataAdded = false;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -59,9 +56,6 @@ class ProductQuantityDataImportPluginTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testImportImportsData(): void
     {
         $this->tester->ensureDatabaseTableIsEmpty();
@@ -79,9 +73,6 @@ class ProductQuantityDataImportPluginTest extends Unit
         $this->tester->assertDatabaseTableContainsData();
     }
 
-    /**
-     * @return void
-     */
     public function testGetImportTypeReturnsTypeOfImporter(): void
     {
         $productQuantityDataImportPlugin = new ProductQuantityDataImportPlugin();

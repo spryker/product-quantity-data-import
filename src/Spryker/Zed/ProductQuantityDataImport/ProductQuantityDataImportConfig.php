@@ -29,9 +29,6 @@ class ProductQuantityDataImportConfig extends DataImportConfig
         return $this->buildImporterConfiguration($moduleDataImportDirectory . 'product_quantity.csv', static::IMPORT_TYPE_PRODUCT_QUANTITY);
     }
 
-    /**
-     * @return string
-     */
     protected function getModuleRoot(): string
     {
         $moduleRoot = realpath(
