@@ -13,6 +13,8 @@ use Spryker\Zed\DataImport\DataImportConfig;
 class ProductQuantityDataImportConfig extends DataImportConfig
 {
     /**
+     * @api
+     *
      * @var string
      */
     public const IMPORT_TYPE_PRODUCT_QUANTITY = 'product-quantity';
